@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="app" aria-live="polite">
+        <div class="logo">
+            <div class="icon">😄</div>
+            <div>
+                <h1>Joke Box</h1>
+                <p class="lead">Fetch a joke, copy it, or save favorite laughs.</p>
+            </div>
+        </div>
+        <div>
+            <small class="small">No APIs? Uses built-in fallback jokes.</small>
+        </div>
+        </header>
+
+
+        <section class="card" id="jokeCard">
+            <p class="joke-setup" id="setup">Click "New joke" to start — or try "Surprise" for a one-liner.</p>
+            <p class="joke-punch" id="punch"></p>
+            <div class="small" id="meta">Source: <span id="source">local</span></div>
+
+
+            <div class="controls" style="margin-top:14px">
+                <button id="newBtn" class="primary">New joke</button>
+                <button id="surpriseBtn" class="ghost">Surprise</button>
+                <button id="copyBtn">Copy</button>
+                <button id="saveBtn">Save</button>
+            </div>
+
+
+            <div style="margin-top:12px; display:flex; gap:8px; align-items:center">
+                <label class="small">Reaction:</label>
+                <button id="laughBtn">😂</button>
+                <button id="mehBtn">😐</button>
+                <button id="loveBtn">❤️</button>
+            </div>
+        </section>
+
+
+        <aside class="sidebar">
+            <div class="panel">
+                <label for="sourceSelect">Choose source</label>
+                <select id="sourceSelect" aria-label="Joke source">
+                    <option value="api">Official Joke API (random)</option>
+                    <option value="local" selected>Local built-in jokes</option>
+                </select>
+            </div>
+
+
+            <div class="panel">
+                <label>Saved jokes</label>
+                <div class="history" id="savedList">
+                    <div class="small">No saved jokes yet — click Save when you like one.</div>
+                </div>
+            </div>
+
+
+            <div class="panel">
+                <label>Options</label>
+                <div style="display:flex; gap:8px; align-items:center">
+                    <input type="checkbox" id="autoRead" /> <label for="autoRead">Auto read aloud</label>
+                </div>
+            </div>
+        </aside>
+
+
+        <footer>
+            <div>Built with ❤️ — Separate files demo</div>
+            <div id="version">v1.0</div>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
